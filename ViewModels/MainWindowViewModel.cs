@@ -5,11 +5,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
-using CommunityToolkit.Mvvm.ComponentModel;
-using CommunityToolkit.Mvvm.Input;
-using CommunityToolkitMvvmHelloworld.Models;
+using Microsoft.Toolkit.Mvvm.ComponentModel;
+using Microsoft.Toolkit.Mvvm.Input;
+using MicrosoftToolkitMvvmHelloworld.Models;
 
-namespace CommunityToolkitMvvmHelloworld.ViewModels
+namespace MicrosoftToolkitMvvmHelloworld.ViewModels
 {
     public class MainWindowViewModel : ObservableRecipient
     {
@@ -31,19 +31,13 @@ namespace CommunityToolkitMvvmHelloworld.ViewModels
         public MainWindowViewModel()
         {
             currentTextMessage = new TextMessage();
-            ChangeTextMessageCommand = new
-                RelayCommand(ChangeTextMessageMethod);
+            ChangeTextMessageCommand = new RelayCommand(ChangeTextMessageMethod);
         }
 
         private void ChangeTextMessageMethod()
         {
             CurrentTextMessage.Content = "Message modified !";
 
-        }
-
-        private void ChangeTextProvider()
-        {
-            ChangeTextMessageMethod();
         }
 
         public ICommand ChangeTextMessageCommand { get; }
